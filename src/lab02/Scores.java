@@ -100,6 +100,32 @@ public class Scores implements Bag {
         return false;
     }
     
-    
+    /**
+     * Removes the first occurrence a specified number from the list.
+     * If the number does not exist, then the list is not changed.
+     * If the number removed is not at the end of the list, then all other 
+     * elements are shifted over 1 to the left to fill the hole.
+     * @param num Number to be removed
+     */
+    @Override
+    public void remove(int num) {
+        int index = -1;
+        int i = 0;
+        while(i < count && index == -1) {
+            if(list[i] == num)
+                index = i;
+            count++;
+        }
+        if(index != -1) {
+            if(count != list.length) {
+                while(index < count) {
+                    list[index] = list[index + 1];
+                    index++;
+                }
+            } else {
+                list[index] = 0;
+            }
+        }
+    }
     
 }
