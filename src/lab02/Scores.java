@@ -120,7 +120,7 @@ public class Scores implements Bag {
         if(index != -1) {
             for(i = index; i < count; i++) {
                     list[i] = list[i + 1];
-                }
+            }
         }
     }
     
@@ -135,7 +135,16 @@ public class Scores implements Bag {
         for(int i = index; i < count; i++) {
             list[i] = list[i + 1];
         }
-        
     }
     
+    /**
+     * Returns the number at the specified index position
+     * @param i Index to search
+     * @return Number at specified index
+     */
+    public int get(int i) {
+        if(i < 0 || i > list.length)
+            throw new ArrayIndexOutOfBoundsException();
+        return list[i];
+    }
 }
