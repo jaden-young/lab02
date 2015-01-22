@@ -1,4 +1,5 @@
 package lab02;
+import java.util.Random;
 
 /**
  *
@@ -117,15 +118,24 @@ public class Scores implements Bag {
             count++;
         }
         if(index != -1) {
-            if(count != list.length) {
-                while(index < count) {
-                    list[index] = list[index + 1];
-                    index++;
+            for(i = index; i < count; i++) {
+                    list[i] = list[i + 1];
                 }
-            } else {
-                list[index] = 0;
-            }
         }
+    }
+    
+    /**
+     * Removes a random number from the list and shifts all other 
+     * elements over to fill the hole.
+     */
+    @Override
+    public void remove() {
+        Random rand = new Random();
+        int index = rand.nextInt(count);
+        for(int i = index; i < count; i++) {
+            list[i] = list[i + 1];
+        }
+        
     }
     
 }
