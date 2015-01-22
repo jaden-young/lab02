@@ -5,7 +5,6 @@ package lab02;
  * @author jaden.young
  */
 public class Scores implements Bag {
-
     private int[] list;
     private int count;
     
@@ -53,5 +52,17 @@ public class Scores implements Bag {
         }
     }
     
+    @Override
+    public void add(int num) {
+        if(count == list.length) {
+            int[] temp = new int[2 * list.length];
+            for(int i = 0; i < list.length; i++) {
+                temp[i] = list[i];
+            }
+            list = temp;
+            temp = null;
+        }
+        list[count] = num;
+    }
     
 }
