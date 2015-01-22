@@ -52,6 +52,12 @@ public class Scores implements Bag {
         }
     }
     
+    /**
+     * Adds a number to the end of the list.
+     * If the list is full, the size of the list is doubled and the number is 
+     * then assigned to the end of the list.
+     * @param num Number to be added to the list
+     */
     @Override
     public void add(int num) {
         if(count == list.length) {
@@ -64,5 +70,36 @@ public class Scores implements Bag {
         }
         list[count] = num;
     }
+    
+    /**
+     * Returns the number of times a given number is present in the list
+     * @param num Number to be searched for
+     * @return Number of entries of the number
+     */
+    @Override
+    public int getFrequencyOf(int num) {
+        int frequency = 0;
+        for(int i = 0; i < count; i++) {
+            if(list[i] == num)
+                frequency++;
+        }
+        return frequency;
+    }
+    
+    /**
+     * Tells whether or not a given number is present in the array
+     * @param num Number to be searched for
+     * @return True if the number is in the array, false if not
+     */
+    @Override
+    public boolean contains(int num) {
+        for(int i = 0; i < count; i++) {
+            if(list[i] == num)
+                return true;
+        }
+        return false;
+    }
+    
+    
     
 }
