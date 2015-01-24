@@ -70,6 +70,7 @@ public class Scores implements Bag {
             temp = null;
         }
         list[count] = num;
+        count++;
     }
     
     /**
@@ -115,12 +116,13 @@ public class Scores implements Bag {
         while(i < count && index == -1) {
             if(list[i] == num)
                 index = i;
-            count++;
+            i++;
         }
         if(index != -1) {
             for(i = index; i < count; i++) {
                     list[i] = list[i + 1];
             }
+            count--;
         }
     }
     
@@ -135,6 +137,7 @@ public class Scores implements Bag {
         for(int i = index; i < count; i++) {
             list[i] = list[i + 1];
         }
+        count--;
     }
     
     /**
