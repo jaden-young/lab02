@@ -10,14 +10,24 @@ public class TestScores {
         //instance variables
         Random rand = new Random();
         Scores score = new Scores(100);
-        final int SCORE_LENGTH = 100;
+        final int INITIAL_LENGTH = 100;
         
-        //populate the object with random values 1-1000
-        for(int i = 0; i < SCORE_LENGTH; i++) {
+        //magic numbers are icky
+        for(int i = 0; i < INITIAL_LENGTH; i++) {
             score.add(rand.nextInt(1000));
         }
-        
-        //print contents of object
-        
+        for(int i = 0; i < INITIAL_LENGTH; i++) {
+            System.out.println(score.get(i));
+        }
+        score.add(606);
+        System.out.println("Current size of the object: " + 
+                score.getCurrentSize());
+        score.remove();
+        score.remove(score.get(75));
+        for(int i = 0; i < score.getCurrentSize(); i++) {
+            System.out.println(score.get(i));
+        }
+        System.out.println(score.getFrequencyOf(100));
+        System.out.println(score.contains(606));
     }
 }
