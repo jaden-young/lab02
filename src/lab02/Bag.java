@@ -1,7 +1,8 @@
 package lab02;
 /**
- *
- * @author jaden.young
+ * Interface that provides methods for a bag containing a list of integers.<BR>
+ * 
+ * @author Jaden Young
  */
 public interface Bag {
     
