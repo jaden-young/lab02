@@ -16,18 +16,35 @@ public class TestScores {
         for(int i = 0; i < INITIAL_LENGTH; i++) {
             score.add(rand.nextInt(1000));
         }
+        //print all entries
         for(int i = 0; i < INITIAL_LENGTH; i++) {
-            System.out.println(score.get(i));
+            //just in case
+            try {
+                System.out.println(i + ": " + score.get(i));
+            } catch (ArrayIndexOutOfBoundsException aiobe) {
+                System.out.println("ERROR: Invalid index.");
+            }
         }
         score.add(606);
-        System.out.println("Current size of the object: " + 
+        System.out.println("Current number of entries after adding 606: " + 
                 score.getCurrentSize());
-        score.remove();
-        score.remove(score.get(75));
-        for(int i = 0; i < score.getCurrentSize(); i++) {
-            System.out.println(score.get(i));
+        score.remove(); //removes random entry
+        try {
+            score.remove(score.get(75));
+        } catch (ArrayIndexOutOfBoundsException aiobe) {
+            System.out.println("ERROR: Invalid index.");
         }
-        System.out.println(score.getFrequencyOf(100));
-        System.out.println(score.contains(606));
+        //print again
+        for(int i = 0; i < score.getCurrentSize(); i++) {
+            try {
+                System.out.println(i + ": " + score.get(i));
+            } catch (ArrayIndexOutOfBoundsException aiobe) {
+                System.out.println("ERROR: Invalid index.");
+            }
+        }
+        System.out.println("Number of times that 100 appears in the list: " + 
+                score.getFrequencyOf(100));
+        System.out.println("Does the list contain the number 606: " + 
+                score.contains(606));
     }
 }

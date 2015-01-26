@@ -10,7 +10,7 @@ public class Scores implements Bag {
     private int count;
     
     /**
-     * Default constructor. Initializes an array of length 50
+     * Default constructor. Initializes an int array of length 50
      */
     public Scores() {
         list = new int[50];
@@ -18,7 +18,7 @@ public class Scores implements Bag {
     }
     
     /**
-     * Overloaded constructor. Initializes an array with specified length
+     * Overloaded constructor. Initializes an int array with specified length
      * @param len Length of the array
      */
     public Scores(int len) {
@@ -37,6 +37,7 @@ public class Scores implements Bag {
     
     /**
      * Returns true if there are no entries in the array, false if there are
+     * @return True if array is empty, false if not
      */
     @Override
     public boolean isEmpty() {
@@ -63,7 +64,7 @@ public class Scores implements Bag {
     public void add(int num) {
         if(count == list.length) {
             int[] temp = new int[2 * list.length];
-            for(int i = 0; i < list.length; i++) {
+            for(int i = 0; i < count; i++) {
                 temp[i] = list[i];
             }
             list = temp;
