@@ -2,7 +2,8 @@ package lab02;
 import java.util.Random;
 
 /**
- * Defines a 
+ * Defines a Scores object containing an integer array. 
+ * 
  * @author Jaden Young
  */
 public class Scores implements Bag {
