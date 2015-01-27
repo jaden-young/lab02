@@ -2,7 +2,9 @@ package lab02;
 import java.util.Random;
 
 /**
- * Defines a Scores object containing an integer array. 
+ * Defines a Scores object containing an integer array. The bag interface is 
+ * implemented, along with one additional method that returns the value stored
+ * at a specified index.
  * 
  * @author Jaden Young
  */
@@ -59,6 +61,7 @@ public class Scores implements Bag {
         for (int i = 0; i < count; i++) {
             list[i] = 0;
         }
+        count = 0;
     }
     
     /**

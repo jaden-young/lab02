@@ -1,71 +1,46 @@
 package lab02;
 /**
- * Interface that provides methods for a bag containing a list of integers.<BR>
+ * Classes must contain an array of int type. All methods are designed to work
  * 
  * @author Jaden Young
  */
 public interface Bag {
     
-    /**
-     * Accessor method:<BR>
-     * Returns the number of values that have been assigned to the array
-     * @return Number of entries in the array not counting empty indexes
+    /** 
+     * Returns the current number of items in the bag. Should be the number of 
+     * filled entries, not total size of whatever structure is being used.
      */
     public int getCurrentSize();
    
-    /**
-     * Accessor method:<BR>
-     * Returns true if there are no entries in the array, false if there are
-     * entries
-     * @return True if array is empty, false if not
+    /** 
+     * Tells whether or not the bag is empty. This meaning that at least 1 
+     * nondefault value has been assigned to the data structure.
      */
     public boolean isEmpty();
     
-    /**
-     * Mutator method:<BR>
-     * Adds a number to the end of the list.<BR>
-     * If the list is full, the size of the list is doubled and the number is 
-     * then assigned to the end of the list.
-     * @param num Number to be added to the list
-     */
+    /** Adds a number to the end of the bag */
     public void add(int num);
     
-    /**
-     * Mutator method:<BR>
-     * Removes a random number from the list and shifts all other 
-     * elements over to fill the hole.
-     */
+    /** Removes a number from the bag. Should be random */
     public void remove();
     
     /**
-     * Mutator method:<BR>
-     * Removes the first occurrence a specified number from the list. <p>
-     * If the number does not exist, then the list is not changed.<BR>
-     * If the number removed is not at the end of the list, then the following 
-     * elements are shifted over 1 to the left to fill the hole.
-     * @param num Number to be removed
+     * Removes a specified number from the bag
      */
     public void remove(int num);
     
     /**
-     * Mutator method:<BR>
-     * Sets all entries to 0
+     * Clears the bag
      */
     public void clear();
     
     /**
-     * Accessor method:<BR>
-     * Returns the number of times a given number is present in the list
-     * @param num Number to be searched for
-     * @return Number of entries of the number
+     * Returns the number of times a specified number from the bag
      */
     public int getFrequencyOf(int num);
     
     /**
-     * Accessor method:<BR>
-     * Tells whether or not a given number is present in the array
-     * @param num Number to be searched for
-     * @return True if the number is in the array, false if not
+     * Tells whether or not a specified number is present in the bag
      */
     public boolean contains(int num);
 }

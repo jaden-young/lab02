@@ -2,8 +2,8 @@ package lab02;
 import java.util.Random;
 
 /**
- *
- * @author jaden.young
+ * Demonstrates the Scores class.
+ * @author Jaden Young
  */
 public class TestScores {
     public static void main(String[] args) {
