@@ -1,20 +1,20 @@
 package lab02;
 /**
- * Classes must contain an array of int type. All methods are designed to work
- * 
+ * Client classes must contain an array of int type. All methods are designed to
+ * work with an integer array.  
  * @author Jaden Young
  */
 public interface Bag {
     
     /** 
      * Returns the current number of items in the bag. Should be the number of 
-     * filled entries, not total size of whatever structure is being used.
+     * filled entries, not total size of the array.
      */
     public int getCurrentSize();
    
     /** 
-     * Tells whether or not the bag is empty. This meaning that at least 1 
-     * nondefault value has been assigned to the data structure.
+     * Tells whether or not the bag is empty. Empty meaning that no values have
+     * been assigned other than default zero values.
      */
     public boolean isEmpty();
     
@@ -30,12 +30,12 @@ public interface Bag {
     public void remove(int num);
     
     /**
-     * Clears the bag
+     * Sets all entries to 0
      */
     public void clear();
     
     /**
-     * Returns the number of times a specified number from the bag
+     * Returns the number of times a specified number appears in the bag
      */
     public int getFrequencyOf(int num);
     
