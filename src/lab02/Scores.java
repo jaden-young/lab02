@@ -161,9 +161,11 @@ public class Scores implements Bag {
      * @param i Index to search
      * @return Number at specified index
      */
-    public int get(int i) {
+    public int get(int i) throws ArrayIndexOutOfBoundsException {
         if(i < 0 || i > list.length)
-            throw new ArrayIndexOutOfBoundsException();
+            throw new ArrayIndexOutOfBoundsException("The index that you are "
+                    + "trying to access is either negative, or larger than "
+                    + "the size of the array.");
         return list[i];
     }
 }
