@@ -15,6 +15,7 @@ public interface Bag {
     /** 
      * Tells whether or not the bag is empty. Empty meaning that no values have
      * been assigned other than default zero values.
+     * @return True if array is empty, false if not
      */
     public boolean isEmpty();
     
